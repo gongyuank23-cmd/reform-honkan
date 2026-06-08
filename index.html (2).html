@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>住まいのリフォーム本館 | 筑後市・大木町・八女市</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1a2744;
+    --navy-dark: #0f1a33;
+    --blue: #2563a8;
+    --blue-light: #4a90d9;
+    --gold: #c9a84c;
+    --gold-light: #e8c96a;
+    --cream: #f8f5ef;
+    --white: #fff;
+    --text: #1a1a1a;
+    --gray: #666;
+    --border: #ddd;
+    --orange: #e07020;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: var(--text);
+    background: #fff;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  /* ── TOP BAR ── */
+  .top-bar {
+    background: var(--navy-dark);
+    color: rgba(255,255,255,0.8);
+    text-align: center;
+    padding: 7px;
+    font-size: 12px;
+    letter-spacing: 0.05em;
+  }
+  .top-bar span {
+    color: var(--gold-light);
+    font-weight: 700;
+    margin: 0 8px;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--navy);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .logo-area {}
+  .logo-sub {
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    margin-bottom: 4px;
+  }
+  .logo-main {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+  }
+  .logo-tags {
+    display: flex;
+    gap: 6px;
+    margin-top: 6px;
+  }
+  .logo-tag {
+    background: var(--gold);
+    color: var(--navy-dark);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+
+  .header-center { text-align: center; }
+  .header-badge {
+    background: var(--gold);
+    color: var(--navy-dark);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 14px;
+    border-radius: 2px;
+    margin-bottom: 6px;
+    display: inline-block;
+  }
+  .phone-number {
+    font-size: 34px;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .phone-icon { font-size: 26px; color: var(--gold); }
+  .header-hours { font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 3px; }
+
+  .contact-btn {
+    background: var(--gold);
+    color: var(--navy-dark);
+    border-radius: 4px;
+    padding: 14px 22px;
+    font-weight: 700;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+  .contact-btn:hover { background: var(--gold-light); }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--blue);
+    border-bottom: 3px solid var(--gold);
+  }
+  nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  nav ul li a {
+    display: block;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 13px 20px;
+    transition: background 0.2s;
+    letter-spacing: 0.05em;
+  }
+  nav ul li a:hover { background: var(--navy); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    background: var(--navy-dark);
+    min-height: 460px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1400&q=80') center/cover no-repeat;
+    opacity: 0.2;
+  }
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(15,26,51,0.95) 40%, rgba(15,26,51,0.3));
+  }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    padding: 50px 50px;
+    max-width: 600px;
+  }
+  .hero-label {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy-dark);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 14px;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+  }
+  .hero-region {
+    font-size: 16px;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+  }
+  .hero-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 52px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    text-shadow: 2px 2px 12px rgba(0,0,0,0.5);
+  }
+  .hero-title span { color: var(--gold); }
+  .hero-sub {
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 32px;
+    line-height: 1.8;
+  }
+  .hero-btns {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .hero-btn-primary {
+    background: var(--gold);
+    color: var(--navy-dark);
+    font-weight: 700;
+    font-size: 14px;
+    padding: 14px 28px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .hero-btn-primary:hover { background: var(--gold-light); }
+  .hero-btn-secondary {
+    background: transparent;
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 14px 28px;
+    border-radius: 3px;
+    border: 2px solid rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+  .hero-btn-secondary:hover { border-color: #fff; }
+
+  /* ── FEATURES ── */
+  .features {
+    background: var(--cream);
+    padding: 50px 20px;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .feature-card {
+    background: #fff;
+    border-top: 3px solid var(--gold);
+    padding: 24px 20px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+  .feature-icon { font-size: 32px; margin-bottom: 10px; }
+  .feature-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .feature-desc { font-size: 12px; color: var(--gray); }
+
+  /* ── SECTION TITLE ── */
+  .section-title {
+    text-align: center;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .section-sub {
+    text-align: center;
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 0.15em;
+    font-weight: 700;
+    margin-bottom: 36px;
+  }
+
+  /* ── SERVICES ── */
+  .services { padding: 56px 20px; background: #fff; }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 16px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .service-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+  }
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+  .service-img {
+    height: 100px;
+    background: var(--navy);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+  }
+  .service-body { padding: 14px 12px; }
+  .service-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .service-desc { font-size: 11px; color: var(--gray); line-height: 1.5; }
+
+  /* ── PRICING ── */
+  .pricing { padding: 56px 20px; background: var(--cream); }
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    max-width: 960px;
+    margin: 0 auto 16px;
+  }
+  .pricing-table {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .pricing-table-head {
+    background: var(--navy);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .pricing-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 12px;
+  }
+  .pricing-row:last-child { border-bottom: none; }
+  .pricing-row .price { color: var(--orange); font-weight: 700; white-space: nowrap; }
+  .pricing-note {
+    text-align: center;
+    font-size: 11px;
+    color: var(--gray);
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  /* ── WHY ── */
+  .why { padding: 56px 20px; background: var(--navy); }
+  .why .section-title { color: #fff; }
+  .why .section-sub { color: var(--gold); }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+  .why-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-left: 4px solid var(--gold);
+    padding: 20px 18px;
+    border-radius: 2px;
+  }
+  .why-num {
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .why-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 6px;
+  }
+  .why-desc { font-size: 12px; color: rgba(255,255,255,0.7); line-height: 1.6; }
+
+  /* ── FLOW ── */
+  .flow { padding: 56px 20px; background: #fff; }
+  .flow-steps {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .flow-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    min-width: 120px;
+    max-width: 160px;
+  }
+  .flow-step-icon {
+    width: 64px;
+    height: 64px;
+    background: var(--navy);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 10px;
+    position: relative;
+  }
+  .flow-step-num {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: var(--gold);
+    color: var(--navy-dark);
+    font-size: 10px;
+    font-weight: 900;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .flow-step-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .flow-step-desc { font-size: 11px; color: var(--gray); line-height: 1.5; }
+  .flow-arrow {
+    font-size: 22px;
+    color: var(--gold);
+    margin-top: 20px;
+    padding: 0 4px;
+  }
+  @media (max-width: 600px) {
+    .flow-arrow { display: none; }
+  }
+
+  /* ── AREA ── */
+  .area { padding: 50px 20px; background: var(--cream); }
+  .area-inner {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .area-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  .area-tag {
+    background: var(--navy);
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 2px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .area-note { font-size: 12px; color: var(--gray); margin-top: 16px; }
+
+  /* ── CTA ── */
+  .cta-section {
+    background: var(--navy-dark);
+    padding: 50px 20px;
+    text-align: center;
+  }
+  .cta-section h2 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 22px;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .cta-section p {
+    color: rgba(255,255,255,0.7);
+    font-size: 13px;
+    margin-bottom: 28px;
+  }
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+  .cta-phone-box {
+    background: #fff;
+    border-radius: 4px;
+    padding: 14px 28px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .cta-phone-num {
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--navy);
+  }
+  .cta-contact-btn {
+    background: var(--gold);
+    color: var(--navy-dark);
+    border-radius: 4px;
+    padding: 16px 28px;
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .cta-contact-btn:hover { background: var(--gold-light); }
+  .cta-hours { color: rgba(255,255,255,0.6); font-size: 12px; }
+
+  /* ── SISTER SITE ── */
+  .sister-site {
+    background: #f0f4f8;
+    padding: 30px 20px;
+    text-align: center;
+  }
+  .sister-site p {
+    font-size: 13px;
+    color: var(--gray);
+    margin-bottom: 10px;
+  }
+  .sister-btn {
+    display: inline-block;
+    background: #2d7a2d;
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 13px;
+    transition: opacity 0.2s;
+  }
+  .sister-btn:hover { opacity: 0.85; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #0a0f1e;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 16px;
+    font-size: 11px;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-content > * {
+    animation: fadeInUp 0.6s ease both;
+  }
+  .hero-content > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-content > *:nth-child(2) { animation-delay: 0.2s; }
+  .hero-content > *:nth-child(3) { animation-delay: 0.3s; }
+  .hero-content > *:nth-child(4) { animation-delay: 0.4s; }
+  .hero-content > *:nth-child(5) { animation-delay: 0.5s; }
+
+  @media (max-width: 600px) {
+    header { flex-direction: column; align-items: flex-start; }
+    .hero-title { font-size: 34px; }
+    .hero-content { padding: 30px 20px; }
+    nav ul li a { padding: 10px 10px; font-size: 11px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  筑後市・大木町・八女市の地域密着リフォーム専門店
+  <span>｜</span>
+  お見積り無料
+  <span>｜</span>
+  経験豊富な職人が施工
+</div>
+
+<!-- HEADER -->
+<header>
+  <div class="logo-area">
+    <div class="logo-sub">住まいの</div>
+    <div class="logo-main">リフォーム本館</div>
+    <div class="logo-tags">
+      <span class="logo-tag">地域密着</span>
+      <span class="logo-tag">職人施工</span>
+      <span class="logo-tag">安心価格</span>
+    </div>
+  </div>
+
+  <div class="header-center">
+    <div class="header-badge">お見積り無料・即日対応OK！</div>
+    <div class="phone-number">
+      <span class="phone-icon">📞</span>
+      080-3904-3830
+    </div>
+    <div class="header-hours">受付時間：8:00〜20:00（年中無休）</div>
+  </div>
+
+  <a class="contact-btn" href="mailto:info@reform-honkan.jp">
+    <span>✉️</span>
+    <div>
+      お問い合わせ
+      <div style="font-size:10px;font-weight:400;">見積り無料</div>
+    </div>
+  </a>
+</header>
+
+<!-- NAV -->
+<nav>
+  <ul>
+    <li><a href="#">トップページ</a></li>
+    <li><a href="#services">サービス内容</a></li>
+    <li><a href="#pricing">料金目安</a></li>
+    <li><a href="#why">選ばれる理由</a></li>
+    <li><a href="#flow">ご依頼の流れ</a></li>
+    <li><a href="#area">対応エリア</a></li>
+    <li><a href="#contact">お問い合わせ</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-label">地域密着リフォーム専門店</div>
+    <div class="hero-region">筑後市・大木町・八女市エリア対応</div>
+    <div class="hero-title">住まいの<span>リフォーム</span><br>本館</div>
+    <div class="hero-sub">
+      クロス張替えから水回りリフォームまで、<br>
+      経験豊富な職人がまごころ込めて施工します。
+    </div>
+    <div class="hero-btns">
+      <a class="hero-btn-primary" href="#contact">無料お見積りはこちら</a>
+      <a class="hero-btn-secondary" href="#services">サービス内容を見る</a>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURES -->
+<div class="features">
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">📋</div>
+      <div class="feature-title">見積り無料</div>
+      <div class="feature-desc">現地確認・お見積りは完全無料です</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🔨</div>
+      <div class="feature-title">職人施工</div>
+      <div class="feature-desc">経験豊富な職人が丁寧に施工します</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📍</div>
+      <div class="feature-title">地域密着</div>
+      <div class="feature-desc">筑後エリアに特化した地元の専門店</div>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🛡️</div>
+      <div class="feature-title">アフターフォロー</div>
+      <div class="feature-desc">施工後も安心のアフターサポート</div>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-title">サービス内容</div>
+  <div class="section-sub">SERVICE</div>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <div class="service-img">🖼️</div>
+      <div class="service-body">
+        <div class="service-name">クロス張替え</div>
+        <div class="service-desc">壁紙の張替えで部屋の雰囲気を一新。豊富な種類からお選びいただけます。</div>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-img">🪵</div>
+      <div class="service-body">
+        <div class="service-name">フローリング工事</div>
+        <div class="service-desc">床の張替え・上貼り工事。クッションフロアにも対応しています。</div>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-img">🌿</div>
+      <div class="service-body">
+        <div class="service-name">ウッドデッキ施工</div>
+        <div class="service-desc">庭に新しい空間を。天然木・人工木どちらにも対応します。</div>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-img">🗄️</div>
+      <div class="service-body">
+        <div class="service-name">棚・収納製作</div>
+        <div class="service-desc">オーダーメイドの棚や収納スペースを製作します。</div>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-img">🚿</div>
+      <div class="service-body">
+        <div class="service-name">水回りリフォーム</div>
+        <div class="service-desc">トイレ・洗面所・キッチンなど水回りの改修工事に対応します。</div>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-img">🔧</div>
+      <div class="service-body">
+        <div class="service-name">小規模修繕</div>
+        <div class="service-desc">ドアの建付け・雨漏りなど、小さな修繕もお任せください。</div>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-img">🏠</div>
+      <div class="service-body">
+        <div class="service-name">外壁塗装</div>
+        <div class="service-desc">外壁・屋根の塗装で住まいを守ります。耐久性の高い塗料を使用。</div>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-img">🍳</div>
+      <div class="service-body">
+        <div class="service-name">システムキッチン交換</div>
+        <div class="service-desc">老朽化したキッチンを新しくリフォーム。使いやすい動線にご提案します。</div>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-img">🛁</div>
+      <div class="service-body">
+        <div class="service-name">ユニットバス交換</div>
+        <div class="service-desc">浴室まるごとリフォーム。快適で清潔なバスルームに生まれ変わります。</div>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-img">🪵</div>
+      <div class="service-body">
+        <div class="service-name">床張り替え</div>
+        <div class="service-desc">既存床を剥がして新しい床材に張り替え。傷んだ床も美しく仕上げます。</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="section-title">料金目安</div>
+  <div class="section-sub">PRICE</div>
+  <div class="pricing-grid">
+
+    <div class="pricing-table">
+      <div class="pricing-table-head">🖼️ 内装工事</div>
+      <div>
+        <div class="pricing-row"><span>クロス張替え（6畳）</span><span class="price">4〜8万円</span></div>
+        <div class="pricing-row"><span>フローリング上貼り（6畳）</span><span class="price">8〜20万円</span></div>
+        <div class="pricing-row"><span>クッションフロア（トイレ等）</span><span class="price">2〜6万円</span></div>
+      </div>
+    </div>
+
+    <div class="pricing-table">
+      <div class="pricing-table-head">🚿 水回り・設備</div>
+      <div>
+        <div class="pricing-row"><span>トイレ交換</span><span class="price">10〜25万円</span></div>
+        <div class="pricing-row"><span>給湯器交換</span><span class="price">15〜35万円</span></div>
+      </div>
+    </div>
+
+    <div class="pricing-table">
+      <div class="pricing-table-head">🌿 外構・その他</div>
+      <div>
+        <div class="pricing-row"><span>ウッドデッキ施工</span><span class="price">要見積り</span></div>
+        <div class="pricing-row"><span>棚・収納製作</span><span class="price">要見積り</span></div>
+        <div class="pricing-row"><span>小規模修繕</span><span class="price">1万円〜</span></div>
+      </div>
+    </div>
+
+    <div class="pricing-table">
+      <div class="pricing-table-head">🏠 外壁塗装</div>
+      <div>
+        <div class="pricing-row"><span>外壁塗装（30坪目安）</span><span class="price">60〜120万円</span></div>
+        <div class="pricing-row"><span>屋根塗装（30坪目安）</span><span class="price">30〜60万円</span></div>
+        <div class="pricing-row"><span>外壁＋屋根セット</span><span class="price">要見積り</span></div>
+      </div>
+    </div>
+
+    <div class="pricing-table">
+      <div class="pricing-table-head">🍳 キッチン・浴室</div>
+      <div>
+        <div class="pricing-row"><span>システムキッチン交換</span><span class="price">50〜150万円</span></div>
+        <div class="pricing-row"><span>ユニットバス交換</span><span class="price">60〜150万円</span></div>
+      </div>
+    </div>
+
+    <div class="pricing-table">
+      <div class="pricing-table-head">🪵 床工事</div>
+      <div>
+        <div class="pricing-row"><span>床張り替え（6畳）</span><span class="price">15〜30万円</span></div>
+        <div class="pricing-row"><span>フローリング上貼り（6畳）</span><span class="price">8〜20万円</span></div>
+        <div class="pricing-row"><span>クッションフロア（トイレ等）</span><span class="price">2〜6万円</span></div>
+      </div>
+    </div>
+
+  </div>
+  <div class="pricing-note">※上記は目安料金です。現地確認後に正式なお見積りをご提示します。お見積りは無料です。</div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="section-title">選ばれる理由</div>
+  <div class="section-sub">WHY CHOOSE US</div>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-num">01</div>
+      <div class="why-title">地域密着で迅速対応</div>
+      <div class="why-desc">筑後エリアに特化しているから、すぐに駆けつけられます。</div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">02</div>
+      <div class="why-title">わかりやすい見積り</div>
+      <div class="why-desc">内訳が明確な見積書をご提示。追加費用は事前にご説明します。</div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">03</div>
+      <div class="why-title">経験豊富な職人施工</div>
+      <div class="why-desc">熟練した職人が丁寧に施工。仕上がりの品質にこだわります。</div>
+    </div>
+    <div class="why-card">
+      <div class="why-num">04</div>
+      <div class="why-title">アフターフォロー対応</div>
+      <div class="why-desc">施工後も安心。気になることがあればいつでもご連絡ください。</div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="flow" id="flow">
+  <div class="section-title">ご依頼の流れ</div>
+  <div class="section-sub">FLOW</div>
+  <div class="flow-steps">
+    <div class="flow-step">
+      <div class="flow-step-icon">
+        📞
+        <div class="flow-step-num">1</div>
+      </div>
+      <div class="flow-step-title">お問い合わせ</div>
+      <div class="flow-step-desc">お電話またはメールでお気軽にご連絡ください</div>
+    </div>
+    <div class="flow-arrow">▶</div>
+    <div class="flow-step">
+      <div class="flow-step-icon">
+        🏠
+        <div class="flow-step-num">2</div>
+      </div>
+      <div class="flow-step-title">現地確認</div>
+      <div class="flow-step-desc">現場を確認し、ご要望をお伺いします</div>
+    </div>
+    <div class="flow-arrow">▶</div>
+    <div class="flow-step">
+      <div class="flow-step-icon">
+        📋
+        <div class="flow-step-num">3</div>
+      </div>
+      <div class="flow-step-title">お見積り</div>
+      <div class="flow-step-desc">わかりやすい見積書を無料でご提示します</div>
+    </div>
+    <div class="flow-arrow">▶</div>
+    <div class="flow-step">
+      <div class="flow-step-icon">
+        🔨
+        <div class="flow-step-num">4</div>
+      </div>
+      <div class="flow-step-title">工事</div>
+      <div class="flow-step-desc">熟練職人が丁寧・迅速に施工します</div>
+    </div>
+    <div class="flow-arrow">▶</div>
+    <div class="flow-step">
+      <div class="flow-step-icon">
+        🎉
+        <div class="flow-step-num">5</div>
+      </div>
+      <div class="flow-step-title">お引渡し</div>
+      <div class="flow-step-desc">仕上がりをご確認いただいて完了です</div>
+    </div>
+  </div>
+</section>
+
+<!-- AREA -->
+<section class="area" id="area">
+  <div class="section-title">対応エリア</div>
+  <div class="section-sub">SERVICE AREA</div>
+  <div class="area-inner">
+    <p>筑後市を中心に、周辺エリア全域に対応しています！</p>
+    <div class="area-list">
+      <span class="area-tag">大木町</span>
+      <span class="area-tag">筑後市</span>
+      <span class="area-tag">八女市</span>
+      <span class="area-tag">久留米市</span>
+      <span class="area-tag">柳川市</span>
+      <span class="area-tag">大川市</span>
+    </div>
+    <p class="area-note">上記以外のエリアもお気軽にご相談ください！</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section" id="contact">
+  <h2>まずはお気軽にご相談ください！</h2>
+  <p>お見積りは無料です。お気軽にお問い合わせください。</p>
+  <div class="cta-buttons">
+    <div class="cta-phone-box">
+      <span style="font-size:26px;color:var(--navy);">📞</span>
+      <div>
+        <div style="font-size:11px;color:var(--gray);font-weight:600;">24時間受付中</div>
+        <div class="cta-phone-num">080-3904-3830</div>
+        <div style="font-size:11px;color:var(--gray);">受付時間：8:00〜20:00（年中無休）</div>
+      </div>
+    </div>
+    <a class="cta-contact-btn" href="mailto:info@reform-honkan.jp">
+      ✉️ メールで問い合わせる
+    </a>
+  </div>
+  <div class="cta-hours">※メールは24時間受付中。翌営業日以内にご返信します。</div>
+</div>
+
+<!-- SISTER SITE -->
+<div class="sister-site">
+  <p>🤝 姉妹サイト｜便利屋・何でも屋をお探しの方はこちら</p>
+  <a class="sister-btn" href="https://gongyuank23-cmd.github.io/otasuke-honkan">
+    便利屋 お助け本館 →
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  © 住まいのリフォーム本館 All Rights Reserved.
+</footer>
+
+</body>
+</html>
